@@ -50,8 +50,8 @@ public class PrioritizeCredentialsFromTemplate {
             else
                builder.password(credsFromParameters.getOptionalPassword().get());
          if (credsFromParameters.getOptionalPrivateKey().isPresent())
-            if (credsFromParameters.getOptionalPassword().get().isEmpty())
-               builder.noPassword();
+            if (credsFromParameters.getOptionalPrivateKey().get().isEmpty())
+               builder.noPrivateKey();
             else
                builder.privateKey(credsFromParameters.getOptionalPrivateKey().get());
          if (credsFromParameters.shouldAuthenticateSudo())
